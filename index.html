@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopke</title>
+    <script
+      src="https://kit.fontawesome.com/472910ecc6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/JavaScript/app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <i onclick="burgerMenu()" class="fa-solid fa-bars"></i>
+      <i onclick="burgerMenu()" class="fa-solid fa-bars-staggered"></i>
+      <ul></ul>
+    </nav>
+
+    <h1>List</h1>
+    <i onclick="deSend()" class="fa-solid fa-arrow-down-a-z"></i>
+    <section class="todo">
+      <form method="get" action="#">
+        <input
+          type="text"
+          name="newList"
+          id="newList"
+          placeholder="New List"
+          maxlength="55"
+        />
+
+        <a class="addlist" id="addbtn" href="#"
+          ><i class="fa-solid fa-circle-plus"></i>Add</a
+        >
+      </form>
+
+      <ul id="ull"></ul>
+    </section>
+  </body>
+</html>
