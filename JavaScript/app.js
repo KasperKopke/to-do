@@ -118,33 +118,3 @@ sortBtn.addEventListener("click", (event) => {
 function burgerMenu() {
   document.querySelector("nav").classList.toggle("active");
 }
-
-addBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  const newList = document.getElementById("newList").value;
-  const lists = JSON.parse(localStorage.getItem("lists")) || [];
-  lists.push(newList);
-  localStorage.setItem("lists", JSON.stringify(lists));
-  createList();
-  document.getElementById("newList").value = "";
-});
-
-function createList() {
-  const lists = JSON.parse(localStorage.getItem("lists")) || [];
-  const ul = document.getElementById("ull");
-  ul.innerHTML = "";
-  for (let i = 0; i < lists.length; i++) {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <p>${lists[i]}</p>
-      <i class="fa-solid fa-ellipsis"></i>
-      <i class="fa-solid fa-circle"></i>
-      <i class="fa-solid fa-circle-check"></i>
-    `;
-    ul.appendChild(li);
-  }
-}
-
-window.onload = function () {
-  createList();
-};
