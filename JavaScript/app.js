@@ -118,3 +118,25 @@ sortBtn.addEventListener("click", (event) => {
 function burgerMenu() {
   document.querySelector("nav").classList.toggle("active");
 }
+
+// Gem listen i localStorage, hver gang den ændres
+function saveList(listItems) {
+  localStorage.setItem("listItems", JSON.stringify(listItems));
+}
+
+// Hent listen fra localStorage, når siden indlæses
+function loadList() {
+  const savedList = localStorage.getItem("listItems");
+  if (savedList) {
+    listItems = JSON.parse(savedList);
+    showItems(listItems);
+  }
+}
+
+// Vis listen første gang siden indlæses
+loadList();
+
+// Tilføj event listener til at gemme listen, hver gang den ændres
+window.addEventListener("beforeunload", function () {
+  saveList(listItems);
+});
